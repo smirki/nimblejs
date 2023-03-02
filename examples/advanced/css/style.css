@@ -1,0 +1,28 @@
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .blog-post {
+    width: calc(50% - 20px);
+    margin: 20px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-post h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  
+  .blog-post .author {
+    font-size: 14px;
+    margin: 0 0 5px;
+  }
+  
+  .blog-post .content {
+    font-size: 16px;
+    line-height: 1.5;
+  }
