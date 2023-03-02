@@ -25,14 +25,11 @@ This will replace the `{{name}}` and `{{age}}` placeholders in the template stri
 
 You can also specify a target element where the rendered template should be injected by passing in the target element as a third parameter:
 
-javascriptCopy code
-
 `var targetElement = document.getElementById("myTargetElement");
 Nimble.render(data, template, targetElement);`
 
 Nimble.js also provides a `Nimble.event()` method that allows you to set up click event listeners that render templates when triggered. Here's an example:
 
-javascriptCopy code
 
     var button = Nimble.event("myButton");
     button.renderOnClick(data, template, "myTargetElement");`
