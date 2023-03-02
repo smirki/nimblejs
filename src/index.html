@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Blog</title>
+</head>
+
+<body>
+    <div id="Nimble"></div>    
+    
+    <button id="firstPost">First Post</button>
+    <button id="changePostButton">Change Post</button>
+    <button id="addPost">Add a post</button>
+    
+    
+    <script src="template.js"></script>
+    <script src="nimble.js"></script>
+    
+    <script>
+        
+        var targets = Nimble.grab({
+            container: "container",
+            secondpost: "container2"
+        });
+
+        var blogsPost = Nimble.grab({
+            call: "call"
+        })
+
+        // Call the Nimble.apply() function and log any errors to the console
+        Nimble.apply("Nimble", targets);
+
+        Nimble.apply(secondpost, blogsPost);
+
+        // Render the blog post template with the data and options
+        Nimble.render(post, NimbleTemplate.blogPost, targets.container);
+
+
+        // Attach a click event handler to the change post button 
+        /*
+        Nimble.renderOnClick(newPost, NimbleTemplate.blogPost, Nimble.grab("changePostButton"));
+        Nimble.renderOnClick(post, NimbleTemplate.blogPost, Nimble.grab("firstPost"));
+        */
+
+
+        // Alternatively, you can do this:
+ 
+        Nimble.event("firstPost").renderOnClick(post, NimbleTemplate.blogPost, targets.container);
+        Nimble.event("changePostButton").renderOnClick(newPost, NimbleTemplate.blogPost, targets.container);
+
+
+        Nimble.event("addPost").renderOnClick(newPost, NimbleTemplate.blogPost, blogsPost.call);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="../../src/nimble.js"></script>
+  <script src="template.js"></script>
+</head>
+<body>
+  <div id="blog"></div>
+
+  <script>
+    var data = {
+      posts: [
+        {
+          title: "My First Blog Post",
+          author: "John Doe",
+          publishDate: "January 1, 2022",
+          content: "<p>This is my first blog post. It's about something important.</p>"
+        },
+        {
+          title: "My Second Blog Post",
+          author: "Jane Smith",
+          publishDate: "February 15, 2022",
+          content: "<p>This is my second blog post. It's even more important than the first one.</p>"
+        }
+      ]
+    };
+
+    var NimbleTemplate = {
+  blogPosts: `
+    <div class="blog-posts">
+      {{#each posts}}
+        <div class="blog-post">
+          <h2>{{title}}</h2>
+          <p class="author">By {{author}} on {{publishDate}}</p>
+          <div class="content">{{{content}}}</div>
+        </div>
+      {{/each}}
+    </div>
+  `
+};
+
+var data = {
+  posts: [
+    {
+      title: "My First Blog Post",
+      author: "John Doe",
+      publishDate: "January 1, 2022",
+      content: "<p>This is my first blog post. It's about something important.</p>"
+    },
+    {
+    title: "My Second Blog Post",
+    author: "Jane Smith",
+    publishDate: "February 15, 2022",
+    content: "<p>This is my second blog post. It's even more important than the first one.</p>"
+    }
+    ]
+    };
+    
+    var options = {
+    loadTemplate: "template.html"
+    };
+    
+Nimble.render(data, NimbleTemplate.blogPosts, document.getElementById("blog"), options);
+
+    var options = {
+      loadTemplate: "template.html"
+    };
+
+    Nimble.render(data, NimbleTemplate.blogPosts, Nimble.grab("blog"), options);
+  </script>
+</body>
+</html>
