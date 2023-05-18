@@ -9,7 +9,7 @@ Nimble.js is a simple JavaScript templating library that allows you to dynamical
 
 Using Nimble.js is easy! Simply include the Nimble.js file in your HTML file and use the `Nimble.render()` method to render your templates. Here's an example:
     
-    `// Define your data object
+    // Define your data object
     var data = {
       name: "John Doe",
       age: 30
@@ -19,7 +19,7 @@ Using Nimble.js is easy! Simply include the Nimble.js file in your HTML file and
     var template = "<h1>{{name}}</h1><p>{{age}} years old</p>";
     
     // Render the template with your data
-    Nimble.render(data, template);`
+    Nimble.render(data, template);
 
 This will replace the `{{name}}` and `{{age}}` placeholders in the template string with the corresponding values from the data object and inject the resulting HTML into the default container (i.e., the body of the HTML document).
 
